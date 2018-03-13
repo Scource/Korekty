@@ -189,8 +189,7 @@ def data_subtraction(days_range, excel_file_name, plik_excel):
             excel_file_name.write_formula(row_add,col_add, "="+str(alpha[alpha_letter])+str(add_value_wire)+'-'+str(alpha[alpha_letter])+str(add_value_rdg))
             col_add+=1
             alpha_letter+=1
-            
-
+         
 def open_xls_as_xlsx(filename):
     # first open using xlrd
     book = xlrd.open_workbook(filename)

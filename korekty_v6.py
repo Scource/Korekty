@@ -13,8 +13,6 @@ from korekty_def_file_v6 import *
 import sys
 
 
-
-
 class MainWindow:
 
     
