@@ -12,7 +12,7 @@ def volumen_add(column, MB_name):
     wb1=new_xlsx            
     ws=wb1.active
     day_vol=[]
-    energy_list=[]
+    #energy_list=[]
     if ws['A29'].value != None:
         range_stop = 31
         for wolumen in range(6,range_stop):
@@ -59,9 +59,9 @@ def import_WIRE_file(WIRE,POB_name, oddanie_column, pobor_column, oddanie_row, p
             new_xlsx=open_xls_as_xlsx(MB_name[4])
             wb1=new_xlsx            
             ws=wb1.active
-            POB_P_sum=0
-            POB_O_sum=0
-            O_P_sum = 0
+            #POB_P_sum=0
+            #POB_O_sum=0
+            #O_P_sum = 0
             O_O_sum = 0
             if ws['A29'].value != None:
 
@@ -120,7 +120,7 @@ def import_DDG(starting_column,starting_row,row_range_start, row_range_end, col_
         colDGP+=1
 
 def file_loop(ws,start_col, start_row, days_range):
-    month_volumen=0
+    #month_volumen=0
     energy_list=[]
     for col in range(start_col,days_range+start_col):
         day_volumen=0
@@ -244,7 +244,7 @@ def extrems(list_one,list_two,days_range):
     lst1 = [item for item in list_one]
     lst2 = [item for item in list_two]
     for k in range(2):
-        sum_list=[]
+        #sum_list=[]
         for d in range(0,days_range):
             
             for h in range(24):

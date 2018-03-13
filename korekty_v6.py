@@ -53,7 +53,7 @@ class MainWindow:
 
         count_list_RDG=set([POB[1] for POB in RDG])
         count_list_WIRE=set([POB[1] for POB in WIRE])
-        time_delta_check=set([(POB[3]-POB[2]).days+1 for POB in RDG])
+        #time_delta_check=set([(POB[3]-POB[2]).days+1 for POB in RDG])
         timelapse=set([POB[2] for POB in RDG])
         #timelapse1=datetime.strptime(str(set([POB[2] for POB in RDG])),'%Y,%m,%d,%H,%M')
         timelapse2=set([POB[3] for POB in RDG])
@@ -98,7 +98,7 @@ class MainWindow:
 
                     match=[item for item in RDG if item[1] == POB_name[1] and item[0] != POB_name[0]]
                     if len(match)==1:                    
-                        #index = RDG.index(item)
+                        index = RDG.index(match[0])
                         new_xlsx=open_xls_as_xlsx(RDG[index][4])
                         wb2=new_xlsx
                         ws2=wb2.active
