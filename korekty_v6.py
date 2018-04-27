@@ -6,7 +6,8 @@ trye/expecty/zabezpieczenia/pop-upy
 from tkinter import Tk, Label, Button, Entry, StringVar, filedialog, Listbox, messagebox
 from tkinter.filedialog import askopenfilename
 from openpyxl import load_workbook, Workbook
-from datetime import datetime, timedelta, date
+#from datetime import datetime, timedelta, date
+import datetime
 import xlsxwriter
 import string
 from korekty_def_file_v6 import *
@@ -55,6 +56,10 @@ class MainWindow:
         timelapse=set([POB[2] for POB in RDG])
         #timelapse1=datetime.strptime(str(set([POB[2] for POB in RDG])),'%Y,%m,%d,%H,%M')
         timelapse2=set([POB[3] for POB in RDG])
+        #print(timelapse2)
+        #print('{:%Y-%m-%d %H:%M}'.format(str(timelapse2)))
+        #print('{:%Y-%m-%d}'.format(datetime(2001, 2, 3, 4, 5)))
+
         #timelapse2=datetime.strptime(str(set([POB[3] for POB in RDG])),'%Y-%m-%d')
 
         if count_list_RDG==count_list_WIRE:
@@ -146,7 +151,7 @@ class MainWindow:
                 
                 report.append(file_tuple)                
                 to_char_data.append(dupa33)
-
+        
         report_file(location,POB_name[2],POB_name[3],report,WIRE,POB_name,to_char_data)
 
         if len(no_files_list)==0:
