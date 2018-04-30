@@ -29,12 +29,12 @@ def volumen_add(column, MB_name):
     elif ws['A28'].value == None:
         range_stop = 30
         for wolumen in range(6,range_stop):
-            if wolumen == 7:
+            if wolumen == 8:
                 #cell_cord = column + str(wolumen)
                 #cell_cord_add = column + str(wolumen-1)
                 day_vol.append(0.0)
                 wolumen_sum += 0.0
-            elif wolumen == 6:
+            elif wolumen == 6 or wolumen == 7:
                 cell_cord = column + str(wolumen-1)
                 day_vol.append(ws[cell_cord].value)
                 wolumen_sum += ws[cell_cord].value
@@ -105,25 +105,25 @@ def import_WIRE_file(WIRE,POB_name, oddanie_column, pobor_column, oddanie_row, p
 
             elif ws['A28'].value == None:        
                 for O_P in range(6,30):
-                    if O_P==6:
+                    if O_P==6 or O_P ==7:
                         excel_file_name.write_formula(rowOP,colOP, "='"+str(MB_name[3])+"DGMB'!B"+str(O_P),cell_format)
                         rowOP+=1
-                    elif O_P ==7:
+                    elif O_P ==8:
                         excel_file_name.write_formula(rowOP,colOP, '0',cell_format)
                         rowOP+=1
-                    elif O_P>=8:
+                    elif O_P>=9:
                         excel_file_name.write_formula(rowOP,colOP, "='"+str(MB_name[3])+"DGMB'!B"+str(O_P-1),cell_format)
                         rowOP+=1
                 for O_O in range(6,30):
                     cell_cord = 'C'+ str(O_O-2)
                     #O_O_sum += int(ws[cell_cord].value)
-                    if O_O==6:
+                    if O_O==6 or O_O ==7:
                         excel_file_name.write_formula(rowOO,colOO, "='"+str(MB_name[3])+"DGMB'!D"+str(O_O),cell_format)
                         rowOO+=1
-                    elif O_O ==7:
+                    elif O_O ==8:
                         excel_file_name.write_formula(rowOO,colOO, '0',cell_format)
                         rowOO+=1
-                    elif O_O>=8:
+                    elif O_O>=9:
                         excel_file_name.write_formula(rowOO,colOO, "='"+str(MB_name[3])+"DGMB'!D"+str(O_O-1),cell_format)
                         rowOO+=1
                     #print(O_O_sum)
